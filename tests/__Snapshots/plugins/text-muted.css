@@ -1,0 +1,8 @@
+.text-muted {
+    color: var(--text-muted, hsl(var(--app-600)));
+}
+.dark .text-muted {
+    color: var(--text-muted-dark, hsl(var(--app-400)));
+}
+        
+    

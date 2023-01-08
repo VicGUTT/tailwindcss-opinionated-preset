@@ -1,0 +1,10 @@
+/node_modules
+/tests/__Fixtures
+/tests/__Snapshots
+/dist
+/dist-ssr
+/.coverage
+/.temp
+/.vscode
+/.vic
+*.vic

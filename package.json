@@ -1,0 +1,147 @@
+{
+    "name": "@vicgutt/tailwindcss-opinionated-preset",
+    "version": "0.0.0",
+    "description": "A TailwindCSS opinionated preset with an extended theme & multiple useful plugins installed",
+    "author": "Victor GUTT <guttvictor@yahoo.fr> (https://victorgutt.dev)",
+    "license": "MIT",
+    "keywords": [
+        "tailwindcss",
+        "tailwind",
+        "tailwind-plugin",
+        "tailwind-preset"
+    ],
+    "type": "module",
+    "main": "./dist/_tailwindcss-opinionated-preset.umd.cjs",
+    "module": "./dist/_tailwindcss-opinionated-preset.es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/_tailwindcss-opinionated-preset.es.js",
+            "require": "./dist/_tailwindcss-opinionated-preset.umd.cjs"
+        },
+        "./*": {
+            "import": "./dist/*.js"
+        }
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
+    "engines": {
+        "node": ">=18"
+    },
+    "scripts": {
+        "dev": "vite",
+        "watch": "npm run dev",
+        "preview": "vite preview",
+        "types": "tsc --emitDeclarationOnly",
+        "prod": "vite build && npm run types",
+        "build": "npm run prod",
+        "------------------------------------- | AUTO | -------------------------------------": "",
+        "prepare": "npm run prod",
+        "postinstall": "npm run init",
+        "prepublishOnly": "pinst --disable",
+        "postpublish": "pinst --enable",
+        "------------------------------------- | INIT | -------------------------------------": "",
+        "init": "npm run init:husky",
+        "init:husky": "husky install",
+        "------------------------------------- | TEST | -------------------------------------": "",
+        "test": "vitest run",
+        "test:watch": "vitest watch",
+        "test:coverage": "vitest run --coverage",
+        "test:watch:index": "vitest watch --testNamePattern=index",
+        "test:watch:utils": "vitest watch --testNamePattern=^utils/",
+        "test:watch:plugins": "vitest watch --testNamePattern=^plugins/",
+        "test:watch:support": "vitest watch --testNamePattern=^Support/",
+        "test:watch:[filtered]": "vitest watch --testNamePattern=plugins/text-muted",
+        "------------------------------------- | LINT | -------------------------------------": "",
+        "lint": "eslint . --max-warnings=0",
+        "lint:src": "eslint ./src --max-warnings=0",
+        "lint:tests": "eslint ./tests --max-warnings=0",
+        "fix": "eslint . --max-warnings=0 --fix",
+        "fix:src": "eslint ./src --max-warnings=0 --fix",
+        "fix:tests": "eslint ./tests --max-warnings=0 --fix",
+        "------------------------------------- | CUTE | -------------------------------------": "",
+        "format": "prettier **/*.{ts,js,json,html,yml,md,css,php,vue} -l",
+        "format:fix": "prettier **/*.{ts,js,json,html,yml,md,css,php,vue} --write",
+        "------------------------------------- | PUBL | -------------------------------------": "",
+        "release": "np",
+        "release:preview": "np --preview",
+        "------------------------------------- | MISC | -------------------------------------": "",
+        "size": "npm run prod && size-limit",
+        "analyze": "npm run prod && size-limit --why"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.3.0",
+        "@commitlint/config-conventional": "^17.3.0",
+        "@size-limit/preset-small-lib": "^8.1.0",
+        "@types/lodash.merge": "^4.6.7",
+        "@types/node": "^18.11.9",
+        "@typescript-eslint/eslint-plugin": "^5.44.0",
+        "@typescript-eslint/parser": "^5.44.0",
+        "@vitest/coverage-c8": "^0.26.3",
+        "c8": "^7.12.0",
+        "eslint": "^8.29.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-eslint-comments": "^3.2.0",
+        "eslint-plugin-jsonc": "^2.5.0",
+        "eslint-plugin-n": "^15.5.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "husky": "^8.0.2",
+        "jest-matcher-css": "^1.1.0",
+        "lint-staged": "^13.0.4",
+        "np": "^7.6.2",
+        "pinst": "^3.0.0",
+        "postcss": "^8.4.19",
+        "postcss-discard-comments": "^5.1.2",
+        "prettier": "^2.8.0",
+        "size-limit": "^8.1.0",
+        "tailwindcss": "^3.2.4",
+        "tslib": "^2.4.1",
+        "typescript": "^4.9.3",
+        "vite": "^4.0.4",
+        "vitest": "^0.26.3"
+    },
+    "dependencies": {
+        "@ctrl/tinycolor": "^3.4.1",
+        "@tailwindcss/aspect-ratio": "^0.4.2",
+        "@tailwindcss/container-queries": "^0.1.0",
+        "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/line-clamp": "^0.4.2",
+        "@tailwindcss/typography": "^0.5.8",
+        "@vicgutt/isjs": "^0.1.7",
+        "@vicgutt/strjs": "^0.1.6",
+        "@vicgutt/tailwindcss-debug": "^0.1.0",
+        "@vicgutt/tailwindcss-feature-detection": "^0.1.0",
+        "@vicgutt/tailwindcss-font-face": "^0.2.0",
+        "lodash.merge": "^4.6.2"
+    },
+    "homepage": "https://github.com/vicgutt/tailwindcss-opinionated-preset#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vicgutt/tailwindcss-opinionated-preset.git"
+    },
+    "bugs": {
+        "url": "https://github.com/vicgutt/tailwindcss-opinionated-preset/issues"
+    },
+    "size-limit": [
+        {
+            "path": "dist/_tailwindcss-opinionated-preset.es.js",
+            "limit": "35 KB"
+        },
+        {
+            "path": "dist/_tailwindcss-opinionated-preset.umd.cjs",
+            "limit": "35 KB"
+        },
+        {
+            "path": "dist/**/*.js",
+            "limit": "35 KB"
+        }
+    ],
+    "np": {
+        "yarn": false
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

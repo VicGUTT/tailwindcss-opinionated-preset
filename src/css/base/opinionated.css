@@ -1,0 +1,332 @@
+/* sanitize.css'ish
+------------------------------------------------*/
+
+:where(:root) {
+    /* word-break: break-word; */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Single taps are dispatched immediately on clickable elements */
+:where(a, area, button, input, label, select, summary, textarea, [tabindex]) {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+/**
+ * Animations, scrolling effects, and transitions are reduced in all browsers
+ * @see https://github.com/csstools/sanitize.css/blob/092d0d85922bfa72d28e9e8d25d80a5437c8df44/reduce-motion.css
+ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
+    }
+}
+
+/**
+ * Restrict sizing to the page width in all browsers (opinionated).
+ * @see https://github.com/csstools/sanitize.css/blob/092d0d85922bfa72d28e9e8d25d80a5437c8df44/assets.css
+ */
+:where(iframe, img, input, video, select, textarea) {
+    height: auto;
+    max-width: 100%;
+}
+
+/**
+ * Overwite Tailwind's behaviour of always setting the color to "the user's configured gray 400 color".
+ */
+:where(input::placeholder),
+:where(textarea::placeholder) {
+    color: inherit;
+    opacity: 0.54;
+}
+
+/**
+ * Overwite Tailwind's default behaviour for better accessibility.
+ */
+ol,
+ul {
+    list-style: initial;
+}
+:where(ol, ul)[role='list'] {
+    list-style: none;
+}
+
+/* Bootstrap v5.2.2 - Reboot
+ *
+ * @see https://github.com/twbs/bootstrap/blob/main/scss/_reboot.scss
+ * @see https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap-reboot.css
+------------------------------------------------*/
+
+@media (prefers-reduced-motion: no-preference) {
+    /* ":focus-within" from https://github.com/mayank99/reset.css/blob/fd9668d7340478e97896a63291b6ffb064edd776/package/index.css */
+    :where(:root:focus-within) {
+        scroll-behavior: smooth;
+    }
+}
+
+:where(button) {
+    /**
+    * Remove the default `border-radius` that macOS Chrome adds.
+    * See https://github.com/twbs/bootstrap/issues/24093
+    */
+    border-radius: 0;
+}
+
+/* 1. Add the correct text decoration in Chrome, Edge, Opera, and Safari. */
+/* 2. Add explicit cursor to indicate changed behavior. */
+/* 3. Prevent the text-decoration to be skipped. */
+
+abbr:where([title]) {
+    /* text-decoration: underline dotted; -> Already handled by Tailwind; */ /* 1 */
+    cursor: help; /* 2 */
+    /* text-decoration-skip-ink: none; */ /* 3 */
+}
+
+/* ... */
+
+/* Custom'ish
+/* And @see https://github.com/mayank99/reset.css/blob/fd9668d7340478e97896a63291b6ffb064edd776/package/index.css
+------------------------------------------------*/
+
+/* *, ::before, ::after {
+    --tw-ring-color: hsl(var(--primary-500) / 0.5);
+} */
+
+:where(:root) {
+    --accent-color: hsl(var(--primary-500));
+
+    accent-color: var(--accent-color);
+    color-scheme: light dark;
+    min-block-size: 100vh;
+    min-inline-size: 300px;
+    color: hsl(var(--app-900));
+    background-color: hsl(var(--app-50));
+}
+
+@supports (min-block-size: 100dvb) {
+    :where(:root) {
+        min-block-size: 100dvb;
+    }
+}
+
+:where(:root.dark) {
+    /* --accent-color: hsl(var(--primary-400)); */
+
+    color-scheme: dark;
+    color: hsl(var(--app-50));
+    background-color: hsl(var(--app-900));
+}
+
+/* @see https://twitter.com/LeaVerou/status/1045768279753666562 */
+:where(:focus:not(:focus-visible)) {
+    outline: none;
+}
+
+:where(:focus-visible) {
+    outline: dotted 0.1em var(--accent-color);
+    outline-offset: 2px;
+}
+
+:where(body) {
+    min-block-size: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@supports (min-block-size: 100dvb) {
+    :where(body) {
+        min-block-size: 100dvb;
+    }
+}
+
+:where(pre) {
+    white-space: pre-wrap; /* @see https://github.com/jensimmons/cssremedy/blob/af14bf33097668201441cafabe02072143fcb364/css/remedy.css */
+}
+
+:where(a, button) {
+    transition-property: theme('transitionProperty.DEFAULT');
+    transition-duration: theme('transitionDuration.DEFAULT');
+    transition-timing-function: theme('transitionTimingFunction.DEFAULT');
+}
+
+:where(a) {
+    text-underline-offset: 0.2ex;
+}
+
+:where(a:not([href]):not([class]):focus) {
+    outline: 0;
+}
+
+:where(
+    button,
+    select,
+    summary,
+    area,
+    a[href],
+    label[for],
+    input[type='checkbox' i], /* input types : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-type */
+    input[type='radio' i],
+    input[type='button' i],
+    input[type='color' i],
+    input[type='range' i],
+    input[type='reset' i],
+    input[type='submit' i],
+    input::file-selector-button,
+    input::-webkit-file-upload-button,
+    input::-webkit-calendar-picker-indicator,
+    [role='button'],
+    [role='option']
+):not([disabled]) {
+    cursor: pointer;
+}
+:where(input[type='image' i]):not([disabled]) {
+    cursor: auto;
+}
+:where(label[for]:has(> input:disabled), label[for]:has(+ input:disabled)) {
+    cursor: not-allowed;
+}
+
+:where(img[draggable='false' i]) {
+    user-select: none;
+}
+
+:where([hidden]:not([hidden='until-found'])) {
+    display: none !important;
+}
+
+:where(#app) {
+    isolation: isolate;
+}
+
+::marker {
+    color: var(--accent-color);
+}
+:is(
+        ::-webkit-calendar-picker-indicator,
+        ::-webkit-clear-button,
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button
+    ) {
+    color: var(--accent-color);
+}
+
+/*** Selection  ***/
+
+::selection {
+    color: theme('colors.white');
+    background-color: var(--accent-color);
+    text-shadow: none;
+}
+::-moz-selection {
+    color: theme('colors.white');
+    background-color: var(--accent-color);
+    text-shadow: none;
+}
+::-moz-selection img {
+    color: theme('colors.white');
+    background-color: var(--accent-color);
+}
+
+/*** Scrollbar  ***/
+
+@supports (scrollbar-width: thin) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-thumb, hsl(var(--app-300))) var(--scrollbar-track, transparent); /* The first applies to the thumb of the scrollbar, the second to the track. */
+    }
+    :is(:root.dark) * {
+        --scrollbar-thumb: hsl(var(--app-600));
+    }
+}
+
+/**
+ * Customized scrollbar for Webkit based browsers
+ *
+ * ::-webkit-scrollbar — the entire scrollbar.
+ * ::-webkit-scrollbar-button — the buttons on the scrollbar (arrows pointing upwards and downwards that scroll one line at a time).
+ * ::-webkit-scrollbar-thumb — the draggable scrolling handle.
+ * ::-webkit-scrollbar-track — the track (progress bar) of the scrollbar, where there is a gray bar on top of a white bar.
+ * ::-webkit-scrollbar-track-piece — the part of the track (progress bar) not covered by the handle.
+ * ::-webkit-scrollbar-corner — the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet This is often the bottom-right corner of the browser window.
+ * ::-webkit-resizer — the draggable resizing handle that appears at the bottom corner of some elements.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
+ * @see https://webkit.org/blog/363/styling-scrollbars/
+ * @see https://css-tricks.com/custom-scrollbars-in-webkit/
+*/
+
+::-webkit-scrollbar {
+    height: theme('height[3.5]');
+    width: theme('width[3.5]');
+}
+
+/* ::-webkit-scrollbar:vertical {
+    width: theme('width[3.5]');
+}
+::-webkit-scrollbar:horizontal {
+    height: theme('height[3.5]');
+} */
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track, transparent);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb, hsl(var(--app-300)));
+}
+
+:is(:root.dark)::-webkit-scrollbar-thumb {
+    --scrollbar-thumb: hsl(var(--app-600));
+}
+::-webkit-scrollbar-thumb:hover,
+:is(:root.dark)::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover, hsl(var(--app-500)));
+}
+
+/* ::-webkit-scrollbar-track-piece {
+    background-color: theme('colors.white') | hsl(var(--app-900));
+} */
+
+:where(.scrollbar-sm)::-webkit-scrollbar {
+    height: theme('height.3');
+    width: theme('width.3');
+}
+:where(.scrollbar-md)::-webkit-scrollbar {
+    height: theme('height[3.5]');
+    width: theme('width[3.5]');
+}
+:where(.scrollbar-lg)::-webkit-scrollbar {
+    height: theme('height.4');
+    width: theme('width.4');
+}
+:where(.scrollbar-none) {
+    scrollbar-width: none;
+}
+:where(.scrollbar-none)::-webkit-scrollbar {
+    display: none;
+}
