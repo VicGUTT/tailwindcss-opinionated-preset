@@ -1,6 +1,6 @@
 {
     "name": "@vicgutt/tailwindcss-opinionated-preset",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A TailwindCSS opinionated preset with an extended theme & multiple useful plugins installed",
     "author": "Victor GUTT <guttvictor@yahoo.fr> (https://victorgutt.dev)",
     "license": "MIT",
