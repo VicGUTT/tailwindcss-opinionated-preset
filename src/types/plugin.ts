@@ -22,7 +22,6 @@ export type PluginParams = {
     '@tailwindcss/forms'?: Parameters<typeof forms>[0] | false;
     '@tailwindcss/typography'?: Parameters<typeof typography>[0] | false;
     '@tailwindcss/aspect-ratio'?: undefined | false;
-    '@tailwindcss/line-clamp'?: undefined | false;
     '@tailwindcss/container-queries'?: undefined | false;
     '@vicgutt/tailwindcss-debug'?: DebugPluginParams | false;
     // '@vicgutt/tailwindcss-feature-detection';

@@ -16,9 +16,6 @@ export default {
     '@tailwindcss/aspect-ratio'(params: PluginParams['@tailwindcss/aspect-ratio'] = undefined) {
         return plugin('@tailwindcss/aspect-ratio', params);
     },
-    '@tailwindcss/line-clamp'(params: PluginParams['@tailwindcss/line-clamp'] = undefined) {
-        return plugin('@tailwindcss/line-clamp', params);
-    },
     '@tailwindcss/container-queries'(params: PluginParams['@tailwindcss/container-queries'] = undefined) {
         return plugin('@tailwindcss/container-queries', params);
     },
