@@ -43,6 +43,7 @@ describe('utils/plugins/colors/makeRootCssColorVariables', () => {
             '--primary-700': '335.060deg 77.570% 41.961%',
             '--primary-800': '335.821deg 74.444% 35.294%',
             '--primary-900': '335.888deg 69.032% 30.392%',
+            '--primary-950': '336.164deg 83.908% 17.059%',
             '--secondary-50': '48.000deg 100.000% 96.078%',
             '--secondary-100': '48.000deg 96.491% 88.824%',
             '--secondary-200': '48.000deg 96.639% 76.667%',
@@ -53,6 +54,7 @@ describe('utils/plugins/colors/makeRootCssColorVariables', () => {
             '--secondary-700': '25.965deg 90.476% 37.059%',
             '--secondary-800': '22.727deg 82.500% 31.373%',
             '--secondary-900': '21.714deg 77.778% 26.471%',
+            '--secondary-950': '20.909deg 91.667% 14.118%',
         });
 
         expect(makeRootCssColorVariables({ primary: colors.primary, secondary: colors.secondary }, {})).toEqual({
@@ -66,6 +68,7 @@ describe('utils/plugins/colors/makeRootCssColorVariables', () => {
             '--primary-700': colorToHslStringChannels(colors.primary[700]),
             '--primary-800': colorToHslStringChannels(colors.primary[800]),
             '--primary-900': colorToHslStringChannels(colors.primary[900]),
+            '--primary-950': colorToHslStringChannels(colors.primary[950]),
             '--secondary-50': colorToHslStringChannels(colors.secondary[50]),
             '--secondary-100': colorToHslStringChannels(colors.secondary[100]),
             '--secondary-200': colorToHslStringChannels(colors.secondary[200]),
@@ -76,6 +79,7 @@ describe('utils/plugins/colors/makeRootCssColorVariables', () => {
             '--secondary-700': colorToHslStringChannels(colors.secondary[700]),
             '--secondary-800': colorToHslStringChannels(colors.secondary[800]),
             '--secondary-900': colorToHslStringChannels(colors.secondary[900]),
+            '--secondary-950': colorToHslStringChannels(colors.secondary[950]),
         });
 
         expect(makeRootCssColorVariables({ primary: Palette.from(colors.primary) }, {})).toEqual({
@@ -89,6 +93,7 @@ describe('utils/plugins/colors/makeRootCssColorVariables', () => {
             '--primary-700': '330.366deg 81.188% 30.000%',
             '--primary-800': '330.366deg 81.188% 20.000%',
             '--primary-900': '330.366deg 81.188% 14.000%',
+            '--primary-950': '330.366deg 81.188% 11.000%',
             '--primary-1000': '330.366deg 81.188% 8.000%',
         });
     });
@@ -105,6 +110,7 @@ describe('utils/plugins/colors/makeRootCssColorVariables', () => {
             '--primary-700': colorToHslStringChannels(colors.primary[700]),
             '--primary-800': colorToHslStringChannels(colors.primary[800]),
             '--primary-900': colorToHslStringChannels(colors.primary[900]),
+            '--primary-950': colorToHslStringChannels(colors.primary[950]),
         });
     });
 

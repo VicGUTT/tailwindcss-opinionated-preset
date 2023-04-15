@@ -256,11 +256,6 @@ describe('presets/default', () => {
             false
         );
 
-        // @tailwindcss/line-clamp
-        expect((await toCss({ plugins: { '@tailwindcss/line-clamp': false } })).includes('.line-clamp-1')).toEqual(
-            false
-        );
-
         // @tailwindcss/container-queries
         expect(
             (await toCss({ plugins: { '@tailwindcss/container-queries': false } })).includes('.\\@container')

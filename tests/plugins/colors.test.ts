@@ -90,10 +90,6 @@ describe('plugins/colors', () => {
 
         // @ts-expect-error shush
         expect(actual).toMatchCss(`
-            .bg-white {
-                --tw-bg-opacity: 1;
-                background-color: rgb(255 255 255 / var(--tw-bg-opacity))
-            }
             .bg-amber-500 {
                 --tw-bg-opacity: 1;
                 background-color: hsl(var(--amber-500, 37.692deg 92.126% 50.196%) / var(--tw-bg-opacity))
@@ -101,12 +97,12 @@ describe('plugins/colors', () => {
             .bg-amber-500\\/50 {
                 background-color: hsl(var(--amber-500, 37.692deg 92.126% 50.196%) / 0.5)
             }
+            .bg-white {
+                --tw-bg-opacity: 1;
+                background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+            }
             .bg-opacity-50 {
                 --tw-bg-opacity: 0.5
-            }
-            .text-white {
-                --tw-text-opacity: 1;
-                color: rgb(255 255 255 / var(--tw-text-opacity))
             }
             .text-amber-900 {
                 --tw-text-opacity: 1;
@@ -114,6 +110,10 @@ describe('plugins/colors', () => {
             }
             .text-amber-900\\/50 {
                 color: hsl(var(--amber-900, 21.714deg 77.778% 26.471%) / 0.5)
+            }
+            .text-white {
+                --tw-text-opacity: 1;
+                color: rgb(255 255 255 / var(--tw-text-opacity))
             }
             .text-opacity-50 {
                 --tw-text-opacity: 0.5

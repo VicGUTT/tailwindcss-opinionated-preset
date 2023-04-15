@@ -20,6 +20,8 @@
         
     --app-900: 220.000deg 8.936% 14.000%;
         
+    --app-950: 220.000deg 8.936% 11.000%;
+        
     --app-1000: 220.000deg 8.936% 8.000%;
         
     --primary-50: 330.366deg 81.188% 95.000%;
@@ -41,6 +43,8 @@
     --primary-800: 330.366deg 81.188% 20.000%;
         
     --primary-900: 330.366deg 81.188% 14.000%;
+        
+    --primary-950: 330.366deg 81.188% 11.000%;
         
     --primary-1000: 330.366deg 81.188% 8.000%;
         
@@ -64,6 +68,8 @@
         
     --secondary-900: 37.692deg 92.126% 14.000%;
         
+    --secondary-950: 37.692deg 92.126% 11.000%;
+        
     --secondary-1000: 37.692deg 92.126% 8.000%;
         
     --tertiary-50: 198.630deg 88.664% 95.000%;
@@ -85,6 +91,8 @@
     --tertiary-800: 198.630deg 88.664% 20.000%;
         
     --tertiary-900: 198.630deg 88.664% 14.000%;
+        
+    --tertiary-950: 198.630deg 88.664% 11.000%;
         
     --tertiary-1000: 198.630deg 88.664% 8.000%;
         
@@ -108,6 +116,8 @@
         
     --info-900: 217.219deg 91.220% 14.000%;
         
+    --info-950: 217.219deg 91.220% 11.000%;
+        
     --info-1000: 217.219deg 91.220% 8.000%;
         
     --success-50: 142.086deg 70.563% 95.000%;
@@ -129,6 +139,8 @@
     --success-800: 142.086deg 70.563% 20.000%;
         
     --success-900: 142.086deg 70.563% 14.000%;
+        
+    --success-950: 142.086deg 70.563% 11.000%;
         
     --success-1000: 142.086deg 70.563% 8.000%;
         
@@ -152,6 +164,8 @@
         
     --warning-900: 24.581deg 94.979% 14.000%;
         
+    --warning-950: 24.581deg 94.979% 11.000%;
+        
     --warning-1000: 24.581deg 94.979% 8.000%;
         
     --error-50: 0.000deg 84.236% 95.000%;
@@ -173,6 +187,8 @@
     --error-800: 0.000deg 84.236% 20.000%;
         
     --error-900: 0.000deg 84.236% 14.000%;
+        
+    --error-950: 0.000deg 84.236% 11.000%;
         
     --error-1000: 0.000deg 84.236% 8.000%;
         
@@ -196,6 +212,8 @@
         
     --yolo-900: 173.415deg 80.392% 14.000%;
         
+    --yolo-950: 173.415deg 80.392% 11.000%;
+        
     --yolo-1000: 173.415deg 80.392% 8.000%;
         
     --amber-50: 37.692deg 92.126% 95.000%;
@@ -218,14 +236,21 @@
         
     --amber-900: 37.692deg 92.126% 14.000%;
         
+    --amber-950: 37.692deg 92.126% 11.000%;
+        
     --amber-1000: 37.692deg 92.126% 8.000%
 }
         
-        .bg-white {
+        .bg-amber-500 {
         
     --tw-bg-opacity: 1;
         
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+    background-color: hsl(var(--amber-500, 37.692deg 92.126% 50.196%) / var(--tw-bg-opacity))
+}
+        
+        .bg-amber-500\/50 {
+        
+    background-color: hsl(var(--amber-500, 37.692deg 92.126% 50.196%) / 0.5)
 }
         
         .bg-primary-500 {
@@ -240,16 +265,11 @@
     background-color: hsl(var(--primary-500) / 0.5)
 }
         
-        .bg-amber-500 {
+        .bg-white {
         
     --tw-bg-opacity: 1;
         
-    background-color: hsl(var(--amber-500, 37.692deg 92.126% 50.196%) / var(--tw-bg-opacity))
-}
-        
-        .bg-amber-500\/50 {
-        
-    background-color: hsl(var(--amber-500, 37.692deg 92.126% 50.196%) / 0.5)
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
         
         .bg-yolo-500 {
@@ -269,23 +289,16 @@
     --tw-bg-opacity: 0.5
 }
         
-        .text-white {
+        .text-amber-900 {
         
     --tw-text-opacity: 1;
         
-    color: rgb(255 255 255 / var(--tw-text-opacity))
+    color: hsl(var(--amber-900, 21.714deg 77.778% 26.471%) / var(--tw-text-opacity))
 }
         
-        .text-primary-900 {
+        .text-amber-900\/50 {
         
-    --tw-text-opacity: 1;
-        
-    color: hsl(var(--primary-900) / var(--tw-text-opacity))
-}
-        
-        .text-primary-900\/50 {
-        
-    color: hsl(var(--primary-900) / 0.5)
+    color: hsl(var(--amber-900, 21.714deg 77.778% 26.471%) / 0.5)
 }
         
         .text-primary-1000 {
@@ -300,28 +313,23 @@
     color: hsl(var(--primary-1000) / 0.5)
 }
         
-        .text-amber-900 {
+        .text-primary-900 {
         
     --tw-text-opacity: 1;
         
-    color: hsl(var(--amber-900, 21.714deg 77.778% 26.471%) / var(--tw-text-opacity))
+    color: hsl(var(--primary-900) / var(--tw-text-opacity))
 }
         
-        .text-amber-900\/50 {
+        .text-primary-900\/50 {
         
-    color: hsl(var(--amber-900, 21.714deg 77.778% 26.471%) / 0.5)
+    color: hsl(var(--primary-900) / 0.5)
 }
         
-        .text-yolo-900 {
+        .text-white {
         
     --tw-text-opacity: 1;
         
-    color: hsl(var(--yolo-900) / var(--tw-text-opacity))
-}
-        
-        .text-yolo-900\/50 {
-        
-    color: hsl(var(--yolo-900) / 0.5)
+    color: rgb(255 255 255 / var(--tw-text-opacity))
 }
         
         .text-yolo-1000 {
@@ -334,6 +342,18 @@
         .text-yolo-1000\/50 {
         
     color: hsl(var(--yolo-1000) / 0.5)
+}
+        
+        .text-yolo-900 {
+        
+    --tw-text-opacity: 1;
+        
+    color: hsl(var(--yolo-900) / var(--tw-text-opacity))
+}
+        
+        .text-yolo-900\/50 {
+        
+    color: hsl(var(--yolo-900) / 0.5)
 }
         
         .text-opacity-50 {

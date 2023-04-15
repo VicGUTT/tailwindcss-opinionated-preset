@@ -30,6 +30,7 @@ describe('utils/plugins/colors/makeThemeColorCollection', () => {
                 '700': 'hsl(var(--primary-700, 335.060deg 77.570% 41.961%) / <alpha-value>)',
                 '800': 'hsl(var(--primary-800, 335.821deg 74.444% 35.294%) / <alpha-value>)',
                 '900': 'hsl(var(--primary-900, 335.888deg 69.032% 30.392%) / <alpha-value>)',
+                '950': 'hsl(var(--primary-950, 336.164deg 83.908% 17.059%) / <alpha-value>)',
             },
             secondary: {
                 '50': 'hsl(var(--secondary-50, 48.000deg 100.000% 96.078%) / <alpha-value>)',
@@ -42,6 +43,7 @@ describe('utils/plugins/colors/makeThemeColorCollection', () => {
                 '700': 'hsl(var(--secondary-700, 25.965deg 90.476% 37.059%) / <alpha-value>)',
                 '800': 'hsl(var(--secondary-800, 22.727deg 82.500% 31.373%) / <alpha-value>)',
                 '900': 'hsl(var(--secondary-900, 21.714deg 77.778% 26.471%) / <alpha-value>)',
+                '950': 'hsl(var(--secondary-950, 20.909deg 91.667% 14.118%) / <alpha-value>)',
             },
         });
     });
@@ -66,6 +68,7 @@ describe('utils/plugins/colors/makeThemeColorCollection', () => {
                 '700': 'hsl(var(--primary-700) / <alpha-value>)',
                 '800': 'hsl(var(--primary-800) / <alpha-value>)',
                 '900': 'hsl(var(--primary-900) / <alpha-value>)',
+                '950': 'hsl(var(--primary-950) / <alpha-value>)',
             },
             secondary: {
                 '50': 'hsl(var(--secondary-50) / <alpha-value>)',
@@ -78,6 +81,7 @@ describe('utils/plugins/colors/makeThemeColorCollection', () => {
                 '700': 'hsl(var(--secondary-700) / <alpha-value>)',
                 '800': 'hsl(var(--secondary-800) / <alpha-value>)',
                 '900': 'hsl(var(--secondary-900) / <alpha-value>)',
+                '950': 'hsl(var(--secondary-950) / <alpha-value>)',
             },
         });
     });
@@ -102,6 +106,7 @@ describe('utils/plugins/colors/makeThemeColorCollection', () => {
                 '700': 'hsl(var(--primary-700, 335.060deg 77.570% 41.961%) / <alpha-value>)',
                 '800': 'hsl(var(--primary-800, 335.821deg 74.444% 35.294%) / <alpha-value>)',
                 '900': 'hsl(var(--primary-900, 335.888deg 69.032% 30.392%) / <alpha-value>)',
+                '950': 'hsl(var(--primary-950, 336.164deg 83.908% 17.059%) / <alpha-value>)',
             },
             secondary: tailwindColors.amber,
         });
@@ -127,6 +132,7 @@ describe('utils/plugins/colors/makeThemeColorCollection', () => {
                 '700': 'hsl(var(--primary-700, 335.060deg 77.570% 41.961%) / <alpha-value>)',
                 '800': 'hsl(var(--primary-800, 335.821deg 74.444% 35.294%) / <alpha-value>)',
                 '900': 'hsl(var(--primary-900, 335.888deg 69.032% 30.392%) / <alpha-value>)',
+                '950': 'hsl(var(--primary-950, 336.164deg 83.908% 17.059%) / <alpha-value>)',
             },
             secondary: {
                 '50': 'hsl(var(--secondary-50, 48.000deg 100.000% 96.078%) / <alpha-value>)',
@@ -139,6 +145,7 @@ describe('utils/plugins/colors/makeThemeColorCollection', () => {
                 '700': 'hsl(var(--secondary-700, 25.965deg 90.476% 37.059%) / <alpha-value>)',
                 '800': 'hsl(var(--secondary-800, 22.727deg 82.500% 31.373%) / <alpha-value>)',
                 '900': 'hsl(var(--secondary-900, 21.714deg 77.778% 26.471%) / <alpha-value>)',
+                '950': 'hsl(var(--secondary-950, 20.909deg 91.667% 14.118%) / <alpha-value>)',
             },
         });
     });
