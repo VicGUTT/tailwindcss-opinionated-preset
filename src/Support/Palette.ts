@@ -3,7 +3,7 @@ import Color from './Color.js';
 import PaletteException from '../Exceptions/PaletteException.js';
 import isColorEntries from '../utils/is/isColorEntries.js';
 
-const paletteKeys = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+const paletteKeys = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000];
 
 export default class Palette {
     protected constructor(protected readonly _color: Color) {}
@@ -46,6 +46,7 @@ export default class Palette {
             700: `${hueAndSaturation} 30%`,
             800: `${hueAndSaturation} 20%`,
             900: `${hueAndSaturation} 14%`,
+            950: `${hueAndSaturation} 11%`,
             1000: `${hueAndSaturation} 8%`,
         };
     }

@@ -31,5 +31,6 @@ export type PaletteColorEntries = {
     700: string;
     800: string;
     900: string;
+    950: string;
     1000: string;
 };
