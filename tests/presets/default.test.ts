@@ -172,12 +172,14 @@ describe('presets/default', () => {
         // @tailwindcss/forms
         expect(
             actual.includes(
-                "[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {"
+                "[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {"
             )
         ).toEqual(true);
 
         // @tailwindcss/typography
-        expect(actual.includes('.prose :where([class~="lead"]):not(:where([class~="not-prose"] *)) {')).toEqual(true);
+        expect(
+            actual.includes('.prose :where([class~="lead"]):not(:where([class~="not-prose"],[class~="not-prose"] *)) {')
+        ).toEqual(true);
         expect(actual.includes('--tw-prose-headings: #111827;')).toEqual(true);
 
         // @tailwindcss/line-clamp

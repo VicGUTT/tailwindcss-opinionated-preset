@@ -31,19 +31,22 @@ const jobs: Record<string, Job> = {
 export default function computeTailwindAdditionalSpacing(maxValue = 200) {
     const _jobs = Object.values(jobs);
 
-    return range(0, maxValue).reduce((acc, key) => {
-        for (const job of _jobs) {
-            if (!job.passes(key, maxValue)) {
-                continue;
+    return range(0, maxValue).reduce(
+        (acc, key) => {
+            for (const job of _jobs) {
+                if (!job.passes(key, maxValue)) {
+                    continue;
+                }
+
+                const computed = job.handle(key, maxValue);
+
+                acc[computed] = value(computed);
             }
 
-            const computed = job.handle(key, maxValue);
-
-            acc[computed] = value(computed);
-        }
-
-        return acc;
-    }, {} as Record<number, string>);
+            return acc;
+        },
+        {} as Record<number, string>
+    );
 }
 
 function value(computed: number): string {

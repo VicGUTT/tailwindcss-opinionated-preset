@@ -61,13 +61,16 @@ export default tailwindPlugin.withOptions(
 );
 
 function transformColors(collection: ColorCollection, untouchableColorNames: string[] = []) {
-    return Object.entries(collection).reduce((acc, [key, values]) => {
-        if (untouchableColorNames.includes(key)) {
+    return Object.entries(collection).reduce(
+        (acc, [key, values]) => {
+            if (untouchableColorNames.includes(key)) {
+                return acc;
+            }
+
+            acc[key] = Palette.from(values);
+
             return acc;
-        }
-
-        acc[key] = Palette.from(values);
-
-        return acc;
-    }, {} as Record<string, PaletteColorEntries>);
+        },
+        {} as Record<string, PaletteColorEntries>
+    );
 }
