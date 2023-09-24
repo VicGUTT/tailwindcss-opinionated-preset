@@ -25,7 +25,6 @@ export default function defaultPreset(params: DefaultPresetParams = {}): Config 
         plugins: [
             plugins['@tailwindcss/forms'](params.plugins?.['@tailwindcss/forms']),
             plugins['@tailwindcss/typography'](params.plugins?.['@tailwindcss/typography']),
-            plugins['@tailwindcss/aspect-ratio'](params.plugins?.['@tailwindcss/aspect-ratio']),
             plugins['@tailwindcss/container-queries'](params.plugins?.['@tailwindcss/container-queries']),
             plugins['@vicgutt/tailwindcss-debug'](params.plugins?.['@vicgutt/tailwindcss-debug']),
 

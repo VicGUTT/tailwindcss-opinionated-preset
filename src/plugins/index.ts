@@ -13,9 +13,6 @@ export default {
     '@tailwindcss/typography'(params: PluginParams['@tailwindcss/typography'] = {}) {
         return plugin('@tailwindcss/typography', params);
     },
-    '@tailwindcss/aspect-ratio'(params: PluginParams['@tailwindcss/aspect-ratio'] = undefined) {
-        return plugin('@tailwindcss/aspect-ratio', params);
-    },
     '@tailwindcss/container-queries'(params: PluginParams['@tailwindcss/container-queries'] = undefined) {
         return plugin('@tailwindcss/container-queries', params);
     },
