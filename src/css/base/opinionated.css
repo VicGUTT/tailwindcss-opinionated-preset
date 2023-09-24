@@ -149,6 +149,13 @@ abbr:where([title]) {
     }
 }
 
+/**
+ * @see https://developer.chrome.com/blog/css-text-wrap-balance/#balancing-headlines
+ */
+:where(h1, h2, h3, h4, h5, h6) {
+    text-wrap: balance;
+}
+
 :where(pre) {
     white-space: pre-wrap; /* @see https://github.com/jensimmons/cssremedy/blob/af14bf33097668201441cafabe02072143fcb364/css/remedy.css */
 }
