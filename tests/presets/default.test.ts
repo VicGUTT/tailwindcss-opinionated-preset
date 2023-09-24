@@ -180,9 +180,6 @@ describe('presets/default', () => {
         expect(actual.includes('.prose :where([class~="lead"]):not(:where([class~="not-prose"] *)) {')).toEqual(true);
         expect(actual.includes('--tw-prose-headings: #111827;')).toEqual(true);
 
-        // @tailwindcss/aspect-ratio
-        expect(actual.includes('.aspect-w-1 > * {')).toEqual(true);
-
         // @tailwindcss/line-clamp
         expect(actual.includes('.line-clamp-1 {')).toEqual(true);
 
@@ -251,11 +248,6 @@ describe('presets/default', () => {
             (await toCss({ plugins: { '@tailwindcss/typography': false } })).includes('.prose :where([class~="lead"])')
         ).toEqual(false);
 
-        // @tailwindcss/aspect-ratio
-        expect((await toCss({ plugins: { '@tailwindcss/aspect-ratio': false } })).includes('.aspect-w-1')).toEqual(
-            false
-        );
-
         // @tailwindcss/container-queries
         expect(
             (await toCss({ plugins: { '@tailwindcss/container-queries': false } })).includes('.\\@container')
@@ -306,7 +298,7 @@ describe('presets/default', () => {
         expect(actual.includes('.prose-2xl')).toEqual(false);
         expect(actual.includes('.typography-overwrite-2xl')).toEqual(true);
 
-        // @tailwindcss/aspect-ratio && @tailwindcss/line-clamp && @tailwindcss/container-queries -> have no options
+        // @tailwindcss/line-clamp && @tailwindcss/container-queries -> have no options
 
         // @vicgutt/tailwindcss-debug
         actual = await toCss({

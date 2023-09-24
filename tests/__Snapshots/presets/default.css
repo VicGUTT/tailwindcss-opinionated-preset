@@ -1039,6 +1039,13 @@ abbr:where([title]) {
     }
 }
 
+/**
+ * @see https://developer.chrome.com/blog/css-text-wrap-balance/#balancing-headlines
+ */
+:where(h1, h2, h3, h4, h5, h6) {
+    text-wrap: balance;
+}
+
 :where(pre) {
     white-space: pre-wrap; /* @see https://github.com/jensimmons/cssremedy/blob/af14bf33097668201441cafabe02072143fcb364/css/remedy.css */
 }
@@ -1743,18 +1750,6 @@ abbr:where([title]) {
   margin-top: 0;
 } .prose :where(.prose > :last-child):not(:where([class~="not-prose"] *)) {
   margin-bottom: 0;
-} .aspect-w-1 {
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 1;
-} .aspect-w-1 > * {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 } body::before {
   content: '-';
   padding: 0.5rem;
