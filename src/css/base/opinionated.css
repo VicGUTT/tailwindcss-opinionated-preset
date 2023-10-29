@@ -42,7 +42,7 @@
 }
 
 /**
- * Overwite Tailwind's behaviour of always setting the color to "the user's configured gray 400 color".
+ * Overwrite Tailwind's behaviour of always setting the color to "the user's configured gray 400 color".
  */
 :where(input::placeholder),
 :where(textarea::placeholder) {
@@ -51,7 +51,7 @@
 }
 
 /**
- * Overwite Tailwind's default behaviour for better accessibility.
+ * Overwrite Tailwind's default behaviour for better accessibility.
  */
 ol,
 ul {
