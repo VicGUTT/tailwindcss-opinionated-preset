@@ -244,15 +244,15 @@ abbr:where([title]) {
     background-color: var(--accent-color);
 }
 
-@supports (color: oklch(from var(--accent-color) l c h / .5)) {
+@supports (color: oklch(from var(--accent-color) l c h / 0.5)) {
     ::selection {
-        background-color: oklch(from var(--accent-color) l c h / .5);
+        background-color: oklch(from var(--accent-color) l c h / 0.5);
     }
     ::-moz-selection {
-        background-color: oklch(from var(--accent-color) l c h / .5);
+        background-color: oklch(from var(--accent-color) l c h / 0.5);
     }
     ::-moz-selection img {
-        background-color: oklch(from var(--accent-color) l c h / .5);
+        background-color: oklch(from var(--accent-color) l c h / 0.5);
     }
 }
 
