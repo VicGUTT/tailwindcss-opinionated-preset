@@ -99,18 +99,19 @@ abbr:where([title]) {
 ------------------------------------------------*/
 
 /* *, ::before, ::after {
-    --tw-ring-color: hsl(var(--primary-500) / 0.5);
+    --tw-ring-color: oklch(var(--accent-5) / 0.5);
 } */
 
 :where(:root) {
-    --accent-color: hsl(var(--primary-500));
+    --accent-color: oklch(var(--accent-5));
+    --app-min-width: 300px;
 
     accent-color: var(--accent-color);
     color-scheme: light dark;
     min-block-size: 100vh;
-    min-inline-size: 300px;
-    color: hsl(var(--app-900));
-    background-color: hsl(var(--app-50));
+    min-inline-size: var(--app-min-width);
+    color: oklch(var(--surface-app-text));
+    background-color: oklch(var(--surface-app-bg));
 }
 
 @supports (min-block-size: 100dvb) {
@@ -120,11 +121,9 @@ abbr:where([title]) {
 }
 
 :where(:root.dark) {
-    /* --accent-color: hsl(var(--primary-400)); */
+    /* --accent-color: oklch(var(--accent-4)); */
 
     color-scheme: dark;
-    color: hsl(var(--app-50));
-    background-color: hsl(var(--app-900));
 }
 
 /* @see https://twitter.com/LeaVerou/status/1045768279753666562 */
@@ -244,15 +243,27 @@ abbr:where([title]) {
     background-color: var(--accent-color);
 }
 
+@supports (color: oklch(from var(--accent-color) l c h / .5)) {
+    ::selection {
+        background-color: oklch(from var(--accent-color) l c h / .5);
+    }
+    ::-moz-selection {
+        background-color: oklch(from var(--accent-color) l c h / .5);
+    }
+    ::-moz-selection img {
+        background-color: oklch(from var(--accent-color) l c h / .5);
+    }
+}
+
 /*** Scrollbar  ***/
 
 @supports (scrollbar-width: thin) {
     * {
         scrollbar-width: thin;
-        scrollbar-color: var(--scrollbar-thumb, hsl(var(--app-300))) var(--scrollbar-track, transparent); /* The first applies to the thumb of the scrollbar, the second to the track. */
+        scrollbar-color: var(--scrollbar-thumb, oklch(var(--surface-3))) var(--scrollbar-track, transparent); /* The first applies to the thumb of the scrollbar, the second to the track. */
     }
     :is(:root.dark) * {
-        --scrollbar-thumb: hsl(var(--app-600));
+        --scrollbar-thumb: oklch(var(--surface-6));
     }
 }
 
@@ -304,19 +315,19 @@ abbr:where([title]) {
     background-color: var(--scrollbar-track, transparent);
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb, hsl(var(--app-300)));
+    background-color: var(--scrollbar-thumb, oklch(var(--surface-3)));
 }
 
 :is(:root.dark)::-webkit-scrollbar-thumb {
-    --scrollbar-thumb: hsl(var(--app-600));
+    --scrollbar-thumb: oklch(var(--surface-6));
 }
 ::-webkit-scrollbar-thumb:hover,
 :is(:root.dark)::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb-hover, hsl(var(--app-500)));
+    background-color: var(--scrollbar-thumb-hover, oklch(var(--surface-5)));
 }
 
 /* ::-webkit-scrollbar-track-piece {
-    background-color: theme('colors.white') | hsl(var(--app-900));
+    background-color: theme('colors.white') | oklch(var(--surface-9));
 } */
 
 :where(.scrollbar-sm)::-webkit-scrollbar {
