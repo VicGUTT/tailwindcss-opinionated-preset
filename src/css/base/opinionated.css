@@ -57,7 +57,8 @@ ol,
 ul {
     list-style: initial;
 }
-:where(ol, ul)[role='list'] {
+:where(ol, ul)[role='list'],
+:where(ol, ul)[role='tablist'] {
     list-style: none;
 }
 
@@ -121,7 +122,7 @@ abbr:where([title]) {
 }
 
 :where(:root.dark) {
-    /* --accent-color: oklch(var(--accent-4)); */
+    --accent-color: oklch(var(--accent-7));
 
     color-scheme: dark;
 }
@@ -258,12 +259,22 @@ abbr:where([title]) {
 /*** Scrollbar  ***/
 
 @supports (scrollbar-width: thin) {
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: var(--scrollbar-thumb, oklch(var(--surface-3))) var(--scrollbar-track, transparent); /* The first applies to the thumb of the scrollbar, the second to the track. */
-    }
-    :is(:root.dark) * {
-        --scrollbar-thumb: oklch(var(--surface-6));
+    /* Enabling this only for Firefox as Chrome now also supports "scrollbar-width" */
+    @-moz-document url-prefix() {
+        :root {
+            scrollbar-width: thin;
+            scrollbar-color: var(--scrollbar-thumb, oklch(var(--surface-3))) var(--scrollbar-track, transparent); /* The first applies to the thumb of the scrollbar, the second to the track. */
+        }
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--scrollbar-thumb, oklch(var(--surface-3))) var(--scrollbar-track, transparent); /* The first applies to the thumb of the scrollbar, the second to the track. */
+        }
+        :is(:root.dark) {
+            --scrollbar-thumb: oklch(var(--surface-6));
+        }
+        :is(:root.dark) * {
+            --scrollbar-thumb: oklch(var(--surface-6));
+        }
     }
 }
 
@@ -318,11 +329,11 @@ abbr:where([title]) {
     background-color: var(--scrollbar-thumb, oklch(var(--surface-3)));
 }
 
-:is(:root.dark)::-webkit-scrollbar-thumb {
+:is(:root.dark) ::-webkit-scrollbar-thumb {
     --scrollbar-thumb: oklch(var(--surface-6));
 }
 ::-webkit-scrollbar-thumb:hover,
-:is(:root.dark)::-webkit-scrollbar-thumb:hover {
+:is(:root.dark) ::-webkit-scrollbar-thumb:hover {
     background-color: var(--scrollbar-thumb-hover, oklch(var(--surface-5)));
 }
 
