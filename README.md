@@ -1,30 +1,6 @@
-TODO: Write documentation !
+# Personal, opinionated, Tailwind CSS v4.0 preset
 
-# H1 title
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores porro culpa, officia, totam atque perspiciatis, facilis necessitatibus accusamus delectus illum unde distinctio similique excepturi aut rerum eveniet eum est debitis.
-Here's a quick example:
-
-```js
-// tailwind.config.js
-
-module.exports = {
-    theme: {
-        // ...
-    },
-    plugins: [
-        require('@vicgutt/tailwindcss-opinionated-preset')({
-            // ...
-        }),
-    ],
-};
-```
-
-## How it works
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores porro culpa, officia, totam atque perspiciatis, facilis necessitatibus accusamus delectus illum unde distinctio similique excepturi aut rerum eveniet eum est debitis.
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
+This Tailwind CSS preset is primarily meant for personal use; it applies opinionated styles and disables or overwrites some Tailwind CSS defaults.
 
 ## Installation
 
@@ -38,72 +14,28 @@ npm i @vicgutt/tailwindcss-opinionated-preset
 yarn add @vicgutt/tailwindcss-opinionated-preset
 ```
 
-Then add the plugin to your tailwind.config.js file:
-
-```js
-// tailwind.config.js
-
-module.exports = {
-    theme: {
-        // ...
-    },
-    plugins: [
-        require('@vicgutt/tailwindcss-opinionated-preset'),
-        // ...
-    ],
-};
-```
-
-## Options
-
-The plugin exposes a few options that may be used to configure the plugin's behaviour.
-
-| Name | Type                | Default     | Description |
-| ---- | ------------------- | ----------- | ----------- |
-| abc  | `string\|undefined` | `undefined` | xyz         |
-| abc  | `string\|undefined` | `undefined` | xyz         |
-| abc  | `object\|undefined` | `undefined` | xyz         |
-
-Here's an example of how those options can be used:
-
-```js
-// tailwind.config.js
-
-module.exports = {
-    // ...
-    plugins: [
-        require('@vicgutt/tailwindcss-opinionated-preset')({
-            // ...
-        }),
-    ],
-};
-```
 
 ## Usage
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores porro culpa, officia, totam atque perspiciatis, facilis necessitatibus accusamus delectus illum unde distinctio similique excepturi aut rerum eveniet eum est debitis.
-
-### Abc
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores porro culpa, officia, totam atque perspiciatis, facilis necessitatibus accusamus delectus illum unde distinctio similique excepturi aut rerum eveniet eum est debitis.
-
-#### 123
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores porro culpa, officia, totam atque perspiciatis, facilis necessitatibus accusamus delectus illum unde distinctio similique excepturi aut rerum eveniet eum est debitis.
-
-Here's examples of how it may be defined:
-
-```js
-{
-    // ...
-}
-```
-
-This will produce the following CSS:
+After installation, add the preset to your entry CSS file:
 
 ```css
-/* ... */
+@import 'tailwindcss';
+
+@import 'path/to/node_modules/@vicgutt/tailwindcss-opinionated-preset/src/index.css';
 ```
+
+Or add parts of the preset to your entry CSS file:
+
+```css
+@import 'tailwindcss';
+
+@import 'path/to/node_modules/@vicgutt/tailwindcss-opinionated-preset/src/base/opinionated.css';
+@import 'path/to/node_modules/@vicgutt/tailwindcss-opinionated-preset/src/setup/colors.css';
+/* others... */
+```
+
+Checkout the [`src` directory](https://github.com/vicgutt/tailwindcss-opinionated-preset/blob/main/src) for the full list of available CSS files and changes made within them.
 
 <!-- ## Changelog
 
