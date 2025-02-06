@@ -14,7 +14,6 @@ npm i @vicgutt/tailwindcss-opinionated-preset
 yarn add @vicgutt/tailwindcss-opinionated-preset
 ```
 
-
 ## Usage
 
 After installation, add the preset to your entry CSS file:
@@ -51,8 +50,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
--   [Victor GUTT](https://github.com/vicgutt)
--   [All Contributors](../../contributors)
+- [Victor GUTT](https://github.com/vicgutt)
+- [All Contributors](../../contributors)
 
 ## License
 
