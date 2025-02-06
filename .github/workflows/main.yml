@@ -2,34 +2,25 @@ name: CI
 on: [push]
 jobs:
     build:
-        name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+        name: Format on Node ${{ matrix.node }} and ${{ matrix.os }}
 
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
-                node: ['18.x']
+                node: ['22.x']
                 os: [ubuntu-latest] #, windows-latest, macOS-latest
 
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
 
             - name: Use Node ${{ matrix.node }}
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node }}
 
             - name: Installing NPM dependencies
-              run: npx pinst --disable && npm ci --prefer-offline --no-audit
-
-            - name: Lint
-              run: npm run lint
+              run: npm ci --prefer-offline --no-audit
 
             - name: Format
               run: npm run format
-
-            - name: Test
-              run: npm run test -- --coverage
-
-            - name: Build
-              run: npm run build
