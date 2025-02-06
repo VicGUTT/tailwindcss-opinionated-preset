@@ -184,7 +184,7 @@
 /**
  * Change the fill color to match the text color in all browsers (opinionated).
  */
-/* 
+/*
 :where(svg:not([fill])) {
   fill: currentColor; -> Already handled by Tailwind
 } */
