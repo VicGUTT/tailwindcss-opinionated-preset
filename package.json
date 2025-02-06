@@ -32,8 +32,8 @@
         "format": "prettier **/*.{ts,js,json,html,yml,md,css,php,vue} -l",
         "format:fix": "prettier **/*.{ts,js,json,html,yml,md,css,php,vue} --write",
         "------------------------------------- | PUBL | -------------------------------------": "",
-        "release": "np",
-        "release:preview": "np --preview"
+        "release": "np --no-tests",
+        "release:preview": "np --preview --no-tests"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.7.1",
