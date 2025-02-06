@@ -1,0 +1,78 @@
+@theme {
+    /**
+     * Font family
+     */
+    --font-sans: 'Mulish', 'Muli', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'Source code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
+
+    /**
+     * Transition duration
+     */
+    --default-transition-duration: 200ms;
+}
+
+/**
+ * @see https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/**
+ * @see https://tailwindcss.com/docs/upgrade-guide#container-configuration
+ */
+@utility container {
+    @apply w-full max-w-container mx-auto px-6 lg:px-8 2xl:px-0;
+    @apply sm:max-w-container md:max-w-container lg:max-w-container xl:max-w-container 2xl:max-w-container; /* overwriting the many other breakpoints */
+
+    /* Default:
+    .container {
+        width: 100%;
+        @media (width >= 40rem) {
+            max-width: 40rem;
+        }
+        @media (width >= 48rem) {
+            max-width: 48rem;
+        }
+        @media (width >= 64rem) {
+            max-width: 64rem;
+        }
+        @media (width >= 80rem) {
+            max-width: 80rem;
+        }
+        @media (width >= 96rem) {
+            max-width: 96rem;
+        }
+    } */
+
+    /* Overwrite:
+    .container {
+        width: 100%;
+        margin-inline: auto;
+        max-width: var(--spacing-container);
+        padding-inline: calc(var(--spacing) * 6);
+
+        @media (width >= 64rem) {
+            padding-inline: calc(var(--spacing) * 8);
+        }
+        @media (width >= 96rem) {
+            padding-inline: calc(var(--spacing) * 0);
+        }
+
+        @media (width >= 40rem) {
+            max-width: var(--spacing-container);
+        }
+        @media (width >= 48rem) {
+            max-width: var(--spacing-container);
+        }
+        @media (width >= 64rem) {
+            max-width: var(--spacing-container);
+        }
+        @media (width >= 80rem) {
+            max-width: var(--spacing-container);
+        }
+        @media (width >= 96rem) {
+            max-width: var(--spacing-container);
+        }
+    } */
+}

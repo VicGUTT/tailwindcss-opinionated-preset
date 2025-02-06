@@ -1,0 +1,52 @@
+@layer theme {
+    :root,
+    :host {
+        --app-text-color: var(--color-gray-1100);
+        --app-bg-color: var(--color-white);
+
+        --bg-surface-1: var(--color-gray-0);
+        --bg-surface-2: var(--color-gray-50);
+        --bg-surface-3: color-mix(in oklch, var(--color-gray-100) 80%, var(--color-gray-0));
+        --bg-surface-4: color-mix(in oklch, var(--color-gray-200) 70%, var(--color-gray-0));
+    }
+
+    :root.dark,
+    :host.dark {
+        --app-text-color: var(--color-gray-50);
+        --app-bg-color: var(--color-gray-1100);
+
+        --bg-surface-1: var(--color-gray-1200);
+        --bg-surface-2: var(--color-gray-1100);
+        --bg-surface-3: color-mix(in oklch, var(--color-gray-1100) 45%, var(--color-gray-1000));
+        --bg-surface-4: color-mix(in oklch, var(--color-gray-1000) 70%, var(--color-gray-900));
+    }
+}
+
+@utility bg-app {
+    background-color: var(--app-bg-color);
+}
+
+@utility bg-surface-1 {
+    background-color: var(--bg-surface-1);
+}
+
+@utility bg-surface-2 {
+    background-color: var(--bg-surface-2);
+}
+
+@utility bg-surface-3 {
+    background-color: var(--bg-surface-3);
+}
+
+@utility bg-surface-4 {
+    background-color: var(--bg-surface-4);
+}
+
+@utility text-app {
+    color: var(--app-text-color);
+}
+
+@utility text-muted {
+    --text-muted: color-mix(in oklch, var(--app-text-color) 70%, var(--app-bg-color));
+    color: var(--text-muted);
+}

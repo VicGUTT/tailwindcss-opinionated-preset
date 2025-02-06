@@ -1,0 +1,523 @@
+/**
+ * Color palette channels
+ */
+@layer theme {
+    :root,
+    :host {
+        --color-gray-chroma: 2;
+
+        /* --color-1200-lightness: 7.6; */
+        /* --color-1200-lightness: 9.2304; */
+        --color-1200-lightness: calc(calc(100 / 13) * 1);
+        --color-1200-chroma: 3.2;
+
+        /* --color-1100-lightness: 15.385; */
+        /* --color-1100-lightness: calc(var(--color-1200-lightness) * 2); */
+        --color-1100-lightness: calc(calc(100 / 13) * 2);
+        --color-1100-chroma: 3.5;
+
+        /* --color-1000-lightness: 23.077; */
+        /* --color-1000-lightness: calc(var(--color-1200-lightness) * 3); */
+        --color-1000-lightness: calc(calc(100 / 13) * 3);
+        --color-1000-chroma: 2.3;
+
+        /* --color-950-lightness: 26.923; */
+        /* --color-950-lightness: calc(var(--color-1200-lightness) * 3.5); */
+        --color-950-lightness: calc(calc(100 / 13) * 3.5);
+        --color-950-chroma: 1.6;
+
+        /* --color-900-lightness: 30.769; */
+        /* --color-900-lightness: calc(var(--color-1200-lightness) * 4); */
+        --color-900-lightness: calc(calc(100 / 13) * 4);
+        --color-900-chroma: 1.6;
+
+        /* --color-800-lightness: 38.462; */
+        /* --color-800-lightness: calc(var(--color-1200-lightness) * 5); */
+        --color-800-lightness: calc(calc(100 / 13) * 5);
+        --color-800-chroma: 1.1;
+
+        /* --color-700-lightness: 46.154; */
+        /* --color-700-lightness: calc(var(--color-1200-lightness) * 6); */
+        --color-700-lightness: calc(calc(100 / 13) * 6);
+        --color-700-chroma: 1;
+
+        /* --color-600-lightness: 53.846; */
+        /* --color-600-lightness: calc(var(--color-1200-lightness) * 7); */
+        --color-600-lightness: calc(calc(100 / 13) * 7);
+        --color-600-chroma: 1;
+
+        /* --color-500-lightness: 61.538; */
+        /* --color-500-lightness: calc(var(--color-1200-lightness) * 8); */
+        --color-500-lightness: calc(calc(100 / 13) * 8);
+        --color-500-chroma: 1;
+
+        /* --color-400-lightness: 69.231; */
+        /* --color-400-lightness: calc(var(--color-1200-lightness) * 9); */
+        --color-400-lightness: calc(calc(100 / 13) * 9);
+        --color-400-chroma: 1.1;
+
+        /* --color-300-lightness: 76.923; */
+        /* --color-300-lightness: calc(var(--color-1200-lightness) * 10); */
+        --color-300-lightness: calc(calc(100 / 13) * 10);
+        --color-300-chroma: 1.6;
+
+        /* --color-200-lightness: 84.615; */
+        /* --color-200-lightness: calc(var(--color-1200-lightness) * 11); */
+        --color-200-lightness: calc(calc(100 / 13) * 11);
+        --color-200-chroma: 2.3;
+
+        /* --color-100-lightness: 92.308; */
+        /* --color-100-lightness: calc(var(--color-1200-lightness) * 12); */
+        --color-100-lightness: calc(calc(100 / 13) * 12);
+        --color-100-chroma: 3.5;
+
+        /* --color-50-lightness: 95.654; */
+        /* --color-50-lightness: calc(var(--color-1200-lightness) * 12.5); */
+        --color-50-lightness: calc(calc(100 / 13) * 12.5);
+        --color-50-chroma: 3.5;
+
+        /* --color-0-lightness: 99; */
+        /* --color-0-lightness: calc(var(--color-1200-lightness) * 13); */
+        --color-0-lightness: 99;
+        --color-0-chroma: 50;
+    }
+}
+
+/**
+ * @see https://tailwindcss.com/docs/colors#using-a-custom-palette
+ */
+@theme {
+    --color-*: initial;
+
+    --color-black: #000;
+    --color-white: #fff;
+
+    --color-brand1-base: oklch(0.585 0.233 277.117); /* --color-indigo-500 */
+    --color-brand2-base: oklch(0.769 0.188 70.08); /* --color-amber-500 */
+    --color-brand3-base: oklch(0.685 0.169 237.323); /* --color-sky-500 */
+
+    --color-info-base: oklch(0.623 0.214 259.815); /* --color-blue-500 */
+    --color-success-base: oklch(0.723 0.219 149.579); /* --color-green-500 */
+    --color-warning-base: oklch(0.705 0.213 47.604); /* --color-orange-500 */
+    --color-error-base: oklch(0.637 0.237 25.331); /* --color-red-500 */
+    --color-gray-base: oklch(0.552 0.016 285.938); /* --color-zinc-500 */
+
+    --color-brand1-0: oklch(
+        from var(--color-brand1-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-brand1-50: oklch(
+        from var(--color-brand1-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-brand1-100: oklch(
+        from var(--color-brand1-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-brand1-200: oklch(
+        from var(--color-brand1-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-brand1-300: oklch(
+        from var(--color-brand1-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-brand1-400: oklch(
+        from var(--color-brand1-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-brand1-500: oklch(
+        from var(--color-brand1-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-brand1-600: oklch(
+        from var(--color-brand1-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-brand1-700: oklch(
+        from var(--color-brand1-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-brand1-800: oklch(
+        from var(--color-brand1-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-brand1-900: oklch(
+        from var(--color-brand1-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-brand1-950: oklch(
+        from var(--color-brand1-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-brand1-1000: oklch(
+        from var(--color-brand1-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-brand1-1100: oklch(
+        from var(--color-brand1-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-brand1-1200: oklch(
+        from var(--color-brand1-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+
+    --color-brand2-0: oklch(
+        from var(--color-brand2-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-brand2-50: oklch(
+        from var(--color-brand2-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-brand2-100: oklch(
+        from var(--color-brand2-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-brand2-200: oklch(
+        from var(--color-brand2-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-brand2-300: oklch(
+        from var(--color-brand2-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-brand2-400: oklch(
+        from var(--color-brand2-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-brand2-500: oklch(
+        from var(--color-brand2-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-brand2-600: oklch(
+        from var(--color-brand2-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-brand2-700: oklch(
+        from var(--color-brand2-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-brand2-800: oklch(
+        from var(--color-brand2-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-brand2-900: oklch(
+        from var(--color-brand2-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-brand2-950: oklch(
+        from var(--color-brand2-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-brand2-1000: oklch(
+        from var(--color-brand2-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-brand2-1100: oklch(
+        from var(--color-brand2-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-brand2-1200: oklch(
+        from var(--color-brand2-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+
+    --color-brand3-0: oklch(
+        from var(--color-brand3-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-brand3-50: oklch(
+        from var(--color-brand3-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-brand3-100: oklch(
+        from var(--color-brand3-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-brand3-200: oklch(
+        from var(--color-brand3-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-brand3-300: oklch(
+        from var(--color-brand3-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-brand3-400: oklch(
+        from var(--color-brand3-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-brand3-500: oklch(
+        from var(--color-brand3-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-brand3-600: oklch(
+        from var(--color-brand3-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-brand3-700: oklch(
+        from var(--color-brand3-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-brand3-800: oklch(
+        from var(--color-brand3-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-brand3-900: oklch(
+        from var(--color-brand3-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-brand3-950: oklch(
+        from var(--color-brand3-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-brand3-1000: oklch(
+        from var(--color-brand3-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-brand3-1100: oklch(
+        from var(--color-brand3-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-brand3-1200: oklch(
+        from var(--color-brand3-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+
+    --color-info-0: oklch(
+        from var(--color-info-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-info-50: oklch(
+        from var(--color-info-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-info-100: oklch(
+        from var(--color-info-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-info-200: oklch(
+        from var(--color-info-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-info-300: oklch(
+        from var(--color-info-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-info-400: oklch(
+        from var(--color-info-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-info-500: oklch(
+        from var(--color-info-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-info-600: oklch(
+        from var(--color-info-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-info-700: oklch(
+        from var(--color-info-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-info-800: oklch(
+        from var(--color-info-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-info-900: oklch(
+        from var(--color-info-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-info-950: oklch(
+        from var(--color-info-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-info-1000: oklch(
+        from var(--color-info-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-info-1100: oklch(
+        from var(--color-info-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-info-1200: oklch(
+        from var(--color-info-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+
+    --color-success-0: oklch(
+        from var(--color-success-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-success-50: oklch(
+        from var(--color-success-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-success-100: oklch(
+        from var(--color-success-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-success-200: oklch(
+        from var(--color-success-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-success-300: oklch(
+        from var(--color-success-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-success-400: oklch(
+        from var(--color-success-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-success-500: oklch(
+        from var(--color-success-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-success-600: oklch(
+        from var(--color-success-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-success-700: oklch(
+        from var(--color-success-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-success-800: oklch(
+        from var(--color-success-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-success-900: oklch(
+        from var(--color-success-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-success-950: oklch(
+        from var(--color-success-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-success-1000: oklch(
+        from var(--color-success-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-success-1100: oklch(
+        from var(--color-success-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-success-1200: oklch(
+        from var(--color-success-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+
+    --color-warning-0: oklch(
+        from var(--color-warning-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-warning-50: oklch(
+        from var(--color-warning-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-warning-100: oklch(
+        from var(--color-warning-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-warning-200: oklch(
+        from var(--color-warning-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-warning-300: oklch(
+        from var(--color-warning-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-warning-400: oklch(
+        from var(--color-warning-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-warning-500: oklch(
+        from var(--color-warning-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-warning-600: oklch(
+        from var(--color-warning-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-warning-700: oklch(
+        from var(--color-warning-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-warning-800: oklch(
+        from var(--color-warning-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-warning-900: oklch(
+        from var(--color-warning-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-warning-950: oklch(
+        from var(--color-warning-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-warning-1000: oklch(
+        from var(--color-warning-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-warning-1100: oklch(
+        from var(--color-warning-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-warning-1200: oklch(
+        from var(--color-warning-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+
+    --color-error-0: oklch(
+        from var(--color-error-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-error-50: oklch(
+        from var(--color-error-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-error-100: oklch(
+        from var(--color-error-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-error-200: oklch(
+        from var(--color-error-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-error-300: oklch(
+        from var(--color-error-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-error-400: oklch(
+        from var(--color-error-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-error-500: oklch(
+        from var(--color-error-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-error-600: oklch(
+        from var(--color-error-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-error-700: oklch(
+        from var(--color-error-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-error-800: oklch(
+        from var(--color-error-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-error-900: oklch(
+        from var(--color-error-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-error-950: oklch(
+        from var(--color-error-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-error-1000: oklch(
+        from var(--color-error-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-error-1100: oklch(
+        from var(--color-error-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-error-1200: oklch(
+        from var(--color-error-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+
+    --color-gray-0: oklch(
+        from var(--color-gray-base) calc(var(--color-0-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-50: oklch(
+        from var(--color-gray-base) calc(var(--color-50-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-100: oklch(
+        from var(--color-gray-base) calc(var(--color-100-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-200: oklch(
+        from var(--color-gray-base) calc(var(--color-200-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-300: oklch(
+        from var(--color-gray-base) calc(var(--color-300-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-400: oklch(
+        from var(--color-gray-base) calc(var(--color-400-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-500: oklch(
+        from var(--color-gray-base) calc(var(--color-500-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-600: oklch(
+        from var(--color-gray-base) calc(var(--color-600-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-700: oklch(
+        from var(--color-gray-base) calc(var(--color-700-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-800: oklch(
+        from var(--color-gray-base) calc(var(--color-800-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-900: oklch(
+        from var(--color-gray-base) calc(var(--color-900-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-950: oklch(
+        from var(--color-gray-base) calc(var(--color-950-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-1000: oklch(
+        from var(--color-gray-base) calc(var(--color-1000-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-1100: oklch(
+        from var(--color-gray-base) calc(var(--color-1100-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+    --color-gray-1200: oklch(
+        from var(--color-gray-base) calc(var(--color-1200-lightness) * 1%) calc(var(--color-gray-chroma) * 1%) h
+    );
+
+    /**
+     * Colors based on thoses defined above.
+     */
+    --color-accent-base: var(--color-brand1-base);
+
+    --color-accent-0: oklch(
+        from var(--color-accent-base) calc(var(--color-0-lightness) * 1%) calc(c / var(--color-0-chroma)) h
+    );
+    --color-accent-50: oklch(
+        from var(--color-accent-base) calc(var(--color-50-lightness) * 1%) calc(c / var(--color-50-chroma)) h
+    );
+    --color-accent-100: oklch(
+        from var(--color-accent-base) calc(var(--color-100-lightness) * 1%) calc(c / var(--color-100-chroma)) h
+    );
+    --color-accent-200: oklch(
+        from var(--color-accent-base) calc(var(--color-200-lightness) * 1%) calc(c / var(--color-200-chroma)) h
+    );
+    --color-accent-300: oklch(
+        from var(--color-accent-base) calc(var(--color-300-lightness) * 1%) calc(c / var(--color-300-chroma)) h
+    );
+    --color-accent-400: oklch(
+        from var(--color-accent-base) calc(var(--color-400-lightness) * 1%) calc(c / var(--color-400-chroma)) h
+    );
+    --color-accent-500: oklch(
+        from var(--color-accent-base) calc(var(--color-500-lightness) * 1%) calc(c / var(--color-500-chroma)) h
+    );
+    --color-accent-600: oklch(
+        from var(--color-accent-base) calc(var(--color-600-lightness) * 1%) calc(c / var(--color-600-chroma)) h
+    );
+    --color-accent-700: oklch(
+        from var(--color-accent-base) calc(var(--color-700-lightness) * 1%) calc(c / var(--color-700-chroma)) h
+    );
+    --color-accent-800: oklch(
+        from var(--color-accent-base) calc(var(--color-800-lightness) * 1%) calc(c / var(--color-800-chroma)) h
+    );
+    --color-accent-900: oklch(
+        from var(--color-accent-base) calc(var(--color-900-lightness) * 1%) calc(c / var(--color-900-chroma)) h
+    );
+    --color-accent-950: oklch(
+        from var(--color-accent-base) calc(var(--color-950-lightness) * 1%) calc(c / var(--color-950-chroma)) h
+    );
+    --color-accent-1000: oklch(
+        from var(--color-accent-base) calc(var(--color-1000-lightness) * 1%) calc(c / var(--color-1000-chroma)) h
+    );
+    --color-accent-1100: oklch(
+        from var(--color-accent-base) calc(var(--color-1100-lightness) * 1%) calc(c / var(--color-1100-chroma)) h
+    );
+    --color-accent-1200: oklch(
+        from var(--color-accent-base) calc(var(--color-1200-lightness) * 1%) calc(c / var(--color-1200-chroma)) h
+    );
+}
